@@ -1,5 +1,4 @@
 /* use flex-------------------------------------------------------------- */
-
 .box{
   display:flex;
   height: 270px
@@ -71,7 +70,7 @@
  .box2{
   display: grid;
   grid-template-columns: 112px 82px 67px;
-  grid-template-rows: 0.96fr 0.56fr 1fr;
+  grid-template-rows: 0.96fr 0.65fr 1fr;
   height: 270px;
   grid-gap: 5px
  }
