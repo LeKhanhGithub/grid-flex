@@ -1,34 +1,91 @@
+import { useEffect } from 'react';
 import './App.css'
 
 function App() {
+
+  useEffect(() => {
+
+  const scrollers = document.getElementsByClassName('scroller');
+
+  const scrollerDivs = Array.prototype.filter.call(scrollers, function(testElement) {
+    return testElement.nodeName === 'DIV';
+  });
+  
+  function scrollAll(scrollLeft) {
+    scrollerDivs.forEach(function(element) {
+      element.scrollLeft = scrollLeft;
+    });
+  }
+  
+  scrollerDivs.forEach(function(element) {
+    element.addEventListener('scroll', function(e) {
+      scrollAll(e.target.scrollLeft);
+    });
+  });
+  }, [])
+
+
+
   return (
-    <>
-    {/* use flex */}
-    <div className="box">
-        <div className="box-big1">box bog 1</div>
-        <div className="box-big2">
-          <div className="big2-child1"> big2 child</div>
-          <div className="big2-child2">
-            <div className = "child1">child1.1</div>
-            <div className = 'child2'>
-              <div className = "lastchild1" >1</div>
-              <div className = "lastchild2">2</div>
-            
-            </div>
+      <div >
+        <div class="scroller">
+          <div >
+            <table >
+              <tr>
+                <td> content content </td>
+                <td> content content </td>
+                <td> content content </td>
+                <td> content content </td>
+                <td> content content </td>
+                <td> content content </td>
+                <td> content content </td>
+                <td> content content </td>
+                <td> content content </td>
+                <td> etc... </td>
+              </tr>
+            </table>
           </div>
         </div>
-    </div>
-
-{/* use grid */}
-
-    <div className = "box2">
-      <div className = "hoa1">1</div>
-      <div className = "hoa2">2</div>
-      <div className = "hoa3">3</div>
-      <div className = "hoa4">4</div>
-      <div className = "hoa5">5</div>
-    </div>
-    </>
+        <div class="scroller">
+          <div >
+            <table >
+              <tr>
+                <td> content2 content2 </td>
+                <td> content2 content2 </td>
+                <td> content2 content2 </td>
+                <td> content2 content2 </td>
+                <td> content2 content2 </td>
+                <td> content2 content2 </td>
+                <td> content2 content2 </td>
+                <td> content2 content2 </td>
+                <td> content2 content2 </td>
+                <td> etc... </td>
+              </tr>
+           
+  
+            </table>
+          </div>
+        </div>
+        <div class="scroller">
+          <div >
+            <table >
+              <tr>
+                <td> content3 content3 </td>
+                <td> content3 content3 </td>
+                <td> content3 content3 </td>
+                <td> content3 content3 </td>
+                <td> content3 content3 </td>
+                <td> content3 content3 </td>
+                <td> content3 content3 </td>
+                <td> content3 content3 </td>
+                <td> content3 content3 </td>
+                <td> etc... </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+   
   );
 }
 
